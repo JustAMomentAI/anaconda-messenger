@@ -1,0 +1,6 @@
+{% extends "index.html" %}
+{% block content}
+{% if user.is_anonymous %}
+{% url '/' %}
+{% endif %}
+{% endblock %}

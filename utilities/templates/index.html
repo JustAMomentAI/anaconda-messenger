@@ -1,0 +1,26 @@
+{% load socialaccount %}
+{% providers_media_js %}
+ 
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Damn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel = "stylesheet" type = "text/css" href="{% static 'css/bootstrap-social.css' %}" />
+</head>
+<body>
+    {% if user.is_authenticated %}
+        {% url 'home' %}
+    {% endif %}
+
+    {% block content %}
+        <a href="{% provider_login_url "facebook" method="js_sdk" %}" class="btn btn-block btn-social btn-facebook" style="background-color:#3b5998;text-align:center">
+                <span class="fa fa-facebook"></span>
+                             Sign in with Facebook
+               </a>
+    {% endblock %}               
+</body>
+</html>
