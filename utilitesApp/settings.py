@@ -134,7 +134,7 @@ SOCIALACCOUNT_PROVIDERS = \
 #facebook
 SOCIAL_AUTH_FACEBOOK_KEY = '2341752662517757'  # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET ='04cb1b278152a68b761ac32ee13aea58' #app key
-LOGIN_REDIRECT_URL = "/utilities/home" 
+LOGIN_REDIRECT_URL = "/utilities" 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 

@@ -1,5 +1,6 @@
 {% load socialaccount %}
 {% providers_media_js %}
+ 
  <!DOCTYPE html>
 <html>
 <head>
@@ -7,18 +8,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Damn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     {% load static %}
     <link rel = "stylesheet" type = "text/css" href="{% static 'css/bootstrap-social.css' %}" />
-    <link rel = "stylesheet" type = "text/css" href="{% static 'static/css/style.css' %}" />
 </head>
 <body>
-	<div style = "margin-top: 45vh">
-        <a href="{% provider_login_url "facebook" method="js_sdk" %}" class="btn btn-block btn-social btn-facebook" style="background-color:#3b5998;text-align:center; width: 50%; margin-left: 40%;">
-                <span class="fa fa-facebook" style = "padding-top: 100px;">Sign in with Facebook :)</span>
-                             
-        </a>
-    </div>
+    {% if user.is_authenticated %}
+        {% url 'home' %}
+    {% endif %}
+
+    {% block content %}
+        <a href="{% provider_login_url "facebook" method="js_sdk" %}" class="btn btn-block btn-social btn-facebook" style="background-color:#3b5998;text-align:center">
+                <span class="fa fa-facebook"></span>
+                             Sign in with Facebook
+               </a>
+    {% endblock %}               
 </body>
 </html>
-
