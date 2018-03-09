@@ -4,4 +4,5 @@ from django.shortcuts import render
 def loginPage(request):
     return render(request, "index.html" )
 def homePage(request):
-    return render(request, "home.html")
+    return render(request, "home.html" )
+#def updateMessages(request):
