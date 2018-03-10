@@ -6,3 +6,5 @@ def loginPage(request):
 def homePage(request):
     return render(request, "home.html" )
 #def updateMessages(request):
+def goToSetMeetingsAndIdeas(request):
+    return render(request, "generate.html")
