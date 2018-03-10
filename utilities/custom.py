@@ -16,7 +16,7 @@ def savingUserData(sender, **kwargs):
     userData = {
         'profile_pic' : user.socialaccount_set.filter(provider = 'facebook')[0].get_avatar_url(),
         'name' : user.socialaccount_set.filter(provider = 'facebook')[0].extra_data['name'],
-        'uid' : user.socialaccount_set.filter(provider = 'facebook')[0].extra_data['uid']
+        'uid' : user.socialaccount_set.filter(provider = 'facebook')[0].extra_data['id']
     }
     models.db.child('users').set(userData)
 
