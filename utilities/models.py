@@ -4,7 +4,7 @@ config = {
   "authDomain": "anaconda-messenger.firebaseapp.com",
   "databaseURL": "https://anaconda-messenger.firebaseio.com",
   "storageBucket": "anaconda-messenger.appspot.com",
-  "serviceAccount": "./serviceAccountKey.json"
+  "serviceAccount": "serviceAccountKey.json"
 }
 firebase = pyrebase.initialize_app(config)
 db = firebase.database()
