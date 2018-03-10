@@ -25,7 +25,7 @@ SECRET_KEY = '75=3s-z0-(&$c$v!^q%od(^)i48@o(2%rr_wh9gguqh&b9n-z^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["anaconda-messenger.herokuapp.com"]
 
 SITE_ID = 1
 # Application definition
