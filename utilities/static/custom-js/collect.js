@@ -7,5 +7,5 @@ function OnIdeaContentChanged(value){
         }
     }
     count++;
-    document.getElementById("idea-counting-words").innerHTML = count + "words left";
+    document.getElementById("idea-counting-words").innerHTML = (100 - count) + " words left";
 }
