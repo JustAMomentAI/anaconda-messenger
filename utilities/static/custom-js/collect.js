@@ -12,3 +12,25 @@ function OnIdeaContentChanged(value){
         document.getElementById("idea_content").disabled = true;
     }
 }
+function setMeeting(){
+    var date = document.getElementById("meeting-date").value;
+    var time =  document.getElementById("meeting-time").value;
+    var content = document.getElementById("meeting-content").value;
+    var note = document.getElementById("meeting-note").value;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST","/utilities/meetingset", true);
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var json = JSON.parse(xhr.responseText);
+            console.log(json.email + ", " + json.password);
+        }
+    };
+    var data = JSON.stringify({
+        date : date,
+        time : time,
+        content : content,
+        note : note
+    });
+    xhr.send(data)
+}
