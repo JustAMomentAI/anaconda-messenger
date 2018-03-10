@@ -8,4 +8,7 @@ function OnIdeaContentChanged(value){
     }
     count++;
     document.getElementById("idea-counting-words").innerHTML = (100 - count) + " words left";
+    if(count === 100){
+        document.getElementById("idea_content").disabled = true;
+    }
 }
