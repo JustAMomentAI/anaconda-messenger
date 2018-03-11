@@ -2,13 +2,15 @@ import json
 from django.dispatch import receiver
 from allauth.account import signals
 from . import models
+from .form import MeetingForm
 def resolveMeetingData(request):
     if(request.method == "POST"):
         #GIVE ME STH
-        meetingData = json.loads(request.body)
-        models.db.child("meetings").push(meetingData)
+        data = MeetingForm(request.POST)
+        models.db.child("meetings").push(data)
+
 def getUserChatmates():
-    return models.db.child("users").get();        
+    return models.db.child("users").get()        
 
 @receiver (signals.user_logged_in)
 def savingUserData(sender, **kwargs):

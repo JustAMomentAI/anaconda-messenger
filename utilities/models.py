@@ -11,6 +11,11 @@ config = {
 firebase = pyrebase.initialize_app(config)
 db = firebase.database()
 
+class Meeting(models.Model):
+  date = models.DateField();
+  time = models.TimeField();
+  content =  models.CharField(max_length = 1000);
+  note = models.CharField(max_length = 2000);
 
 
 
