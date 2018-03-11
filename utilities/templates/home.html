@@ -130,9 +130,9 @@
     <div class="ks-body ks-scrollable" data-auto-height>
         <ul class="ks-items">
             {% for userid, userval in usersList.items %} 
-                {% for key, val in userval.items %} 
                 <li class="ks-item ks-active">
                     <a href="#">
+                        {% for key, val in userval.items %} 
                             <span class="ks-avatar">
                                 {% if key == "profile_pic" %}    
                                     <img src="{{val}}" width="36" height="36">
@@ -145,12 +145,12 @@
                                     {% endif %}
                                         <span class="ks-datetime">just now</span>
                                     </div>
-                            {% endfor %}
+                            
                                     <div class="ks-message">Why didn't he come and talk to me himse...</div>
                             </div>
+                        {% endfor %}
                     </a>
                 </li>
-               
             {% endfor %}
             <li class="ks-item ks-active">
                 
