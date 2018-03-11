@@ -12,9 +12,11 @@ def goToSetMeetingsAndIdeas(request):
 def setMeeting(request):
     if(request.method == "POST"):
         print("first step")
-        meetingForm = form.MeetingForm(request.POST);
+        meetingForm = form.MeetingForm(request.POST)
         if meetingForm.is_valid():
             print("perfect")
         else:
             print("not good")
-    return render(request, "generate.html")
+    else:
+        meetingForm = form.MeetingForm()
+    return render(request, "generate.html", {'form' : meetingForm})
