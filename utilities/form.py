@@ -1,5 +1,6 @@
 from django import forms
-from .models import Meeting
 class MeetingForm(forms.Form):
-    model = Meeting
-    field = ("date", "time","content", "note")
+    date = forms.DateField()
+    time = forms.TimeField()
+    content =  forms.CharField(max_length = 1000)
+    note = forms.CharField(max_length = 2000)

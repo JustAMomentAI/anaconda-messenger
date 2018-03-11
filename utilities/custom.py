@@ -3,10 +3,7 @@ from django.dispatch import receiver
 from allauth.account import signals
 from . import models
 from .form import MeetingForm
-def resolveMeetingData(request):
-    if(request.method == "POST"):
-        #GIVE ME STH
-        data = MeetingForm(json.loads(request.POST))
+def resolveMeetingData(data):
         models.db.child("meetings").push(data)
 
 def getUserChatmates():
