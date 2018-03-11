@@ -7,7 +7,8 @@ def resolveMeetingData(request):
         #GIVE ME STH
         meetingData = json.loads(request.body.decode('utf-8'))
         models.db.child("meetings").push(meetingData)
-        
+def getUserChatmates():
+    return models.db.child("users").get();        
 
 @receiver (signals.user_logged_in)
 def savingUserData(sender, **kwargs):
