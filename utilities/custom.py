@@ -15,7 +15,7 @@ def savingUserData(sender, **kwargs):
     #save user data
     userData = {
         'profile_pic' : user.socialaccount_set.filter(provider = 'facebook')[0].get_avatar_url(),
-        'name' : user.socialaccount_set.filter(provider = 'facebook')[0].extra_data['name']
+        'username' : user.socialaccount_set.filter(provider = 'facebook')[0].extra_data['name']
     }    
     uid = user.socialaccount_set.filter(provider = 'facebook')[0].extra_data['id']
     
