@@ -17,8 +17,8 @@ def setMeeting(request):
         meetingForm = MeetingForm(request.POST)
         if meetingForm.is_valid():
             data = {
-                'date' : meetingForm.cleaned_data['date'],
-                'time' : meetingForm.cleaned_data['time'],
+                'date' : str(meetingForm.cleaned_data['date']),
+                'time' : str(meetingForm.cleaned_data['time']),
                 'content' : meetingForm.cleaned_data['content'],
                 'note' : meetingForm.cleaned_data['note']
             }
