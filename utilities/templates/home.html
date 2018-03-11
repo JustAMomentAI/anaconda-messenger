@@ -226,7 +226,13 @@
 <!-- END THEME LAYOUT SCRIPTS -->
 
 <script type="application/javascript">
-    alert({{error}})
+    if(null === '{{error}}'){
+
+    }
+    else{
+        alert('{{error}}');
+    }
+    
 </script>
 <div class="ks-mobile-overlay"></div>
 
