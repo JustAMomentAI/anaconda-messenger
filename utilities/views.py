@@ -5,7 +5,7 @@ def loginPage(request):
     return render(request, "index.html" )
 def homePage(request):
     usersList = custom.getUserChatmates();
-    return render(request, "home.html", "user" : usersList )
+    return render(request, "home.html", usersList)
 #def updateMessages(request):
 def goToSetMeetingsAndIdeas(request):
     return render(request, "generate.html")
