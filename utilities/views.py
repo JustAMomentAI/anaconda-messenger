@@ -13,5 +13,5 @@ def setMeeting(request):
     if(request.method == "POST"):
         meetingForm = form.MeetingForm(request.POST);
         if(meetingForm.is_valid()):
-            print (meetingForm.cleaned_data)
+            custom.resolveMeetingData(meetingForm.cleaned_data)
     return render(request, "generate.html")
