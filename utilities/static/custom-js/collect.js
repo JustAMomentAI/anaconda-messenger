@@ -18,7 +18,7 @@ function setMeeting(){
     var content = document.getElementById("meeting-content").value;
     var note = document.getElementById("meeting-notes").value;
     var xhr = new XMLHttpRequest();
-    xhr.open("POST","/utilities/meetingset", true);
+    xhr.open("POST","/utilities/meetingset/", true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
