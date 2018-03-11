@@ -14,4 +14,6 @@ def setMeeting(request):
         meetingForm = form.MeetingForm(request.POST);
         if meetingForm.is_valid():
             print (meetingForm.cleaned_data)
+        else:
+            print("fuck");
     return render(request, "generate.html")
