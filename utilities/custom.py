@@ -5,7 +5,7 @@ from . import models
 def resolveMeetingData(request):
     if(request.method == "POST"):
         #GIVE ME STH
-        meetingData = json.loads(request.body.decode('utf-8'))
+        meetingData = json.loads(request.body)
         models.db.child("meetings").push(meetingData)
 def getUserChatmates():
     return models.db.child("users").get();        
