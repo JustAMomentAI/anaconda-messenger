@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from . import custom
-from . import form
+from . import form 
 from form import MeetingForm
 # Create your views here.
 def loginPage(request):
