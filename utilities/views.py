@@ -36,11 +36,11 @@ def setIdeas(request):
         ideaForm = IdeaForm(request.POST)
         if ideaForm.is_valid():
             data = {
-                'content' : ideaForm.cleaned_data['type'],
+                'content' : ideaForm.cleaned_data['description'],
             }
             custom.resolveIdeaData(data)
         else:
-            return render(request, "generate.html", {'error' : 'wrong format. Please note the instructions'})
+            return render(request, "generate.html", {'error' : 'wrong format. Please note the instructions', "ideaForm":  IdeaForm()})
     else:
         ideaForm = IdeaForm()
     return render(request, "generate.html", {'form' : MeetingForm(), "ideaForm" : ideaForm})

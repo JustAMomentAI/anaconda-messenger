@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 {% if user.is_anonymous %}
-{% url '/utilities/' %}
+{% url 'utilities' %}
 {% endif %}
 <html>
 <title>TEAM TOOLS</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{% load static %}
-<script src = "{% static 'custom-js/collect.js' %}"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -129,8 +127,9 @@
           <li class="w3-dark-grey w3-xlarge w3-padding-32">NEW IDEAS</li>
           <li class="w3-padding-16">
             DESCRIPTION
-            <p><input class="w3-input w3-padding-16" type="text" placeholder="no more than 100 words" required id = "idea_content" onchange="OnIdeaContentChanged(this.value)"></p>
-            <span class = "w3-opacity" id = "idea-counting-words"> 100 words left</span>
+            <p><form action="utilities/idea" method="post">
+              {ideaForm.description}
+            </form></p>
           </li>
             <h2>New idea is good :)</h2>
             <span class="w3-opacity">We all should consider this</span>
