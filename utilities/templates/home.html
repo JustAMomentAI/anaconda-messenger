@@ -129,8 +129,8 @@
                     <div class="ks-discussions">
     <div class="ks-body ks-scrollable" data-auto-height>
         <ul class="ks-items">
-            {% for userid, userval in usersList.items() %} 
-                {% for key, val in userval.items() %} 
+            {% for userid, userval in usersList.items %} 
+                {% for key, val in userval.items %} 
                 <li class="ks-item ks-active">
                     <a href="#">
                             <span class="ks-avatar">
@@ -199,7 +199,7 @@
 {% block content %}
 
 {% endblock %}
-                    <div class="ks-info ks-messenger__info" style = "float: right">
+                    <div class="ks-info ks-messenger__info" style = "float: 'right' ">
                         <div class="ks-header">
                              User Info
                         </div>
