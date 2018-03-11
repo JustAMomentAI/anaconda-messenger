@@ -128,6 +128,7 @@
           <li class="w3-padding-16">
             DESCRIPTION
             <p><form action="/utilities/idea/" method="post">
+              {% csrf_token %}
               {{ideaForm.description}}
               <button class="w3-button w3-white w3-padding-large w3-hover-black" type ="submit">Submit</button>
             </form></p>
