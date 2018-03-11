@@ -13,7 +13,7 @@ def setMeeting(request):
     if(request.method == "POST"):
         meetingForm = form.MeetingForm(request.POST);
         if meetingForm.is_valid():
-            print (meetingForm.cleaned_data)
+            print (meetingForm.cleaned_data["date"])
         else:
             print("fuck");
     return render(request, "generate.html")
