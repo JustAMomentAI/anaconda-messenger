@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from . import custom, form
+from form import MeetingForm
 # Create your views here.
 def loginPage(request):
     return render(request, "index.html" )
@@ -12,11 +13,11 @@ def goToSetMeetingsAndIdeas(request):
 def setMeeting(request):
     if(request.method == "POST"):
         print("first step")
-        meetingForm = form.MeetingForm(request.POST)
+        meetingForm = MeetingForm(request.POST)
         if meetingForm.is_valid():
             print("perfect")
         else:
             print("not good")
     else:
-        meetingForm = form.MeetingForm()
+        meetingForm = MeetingForm()
     return render(request, "generate.html", {'form' : meetingForm})
