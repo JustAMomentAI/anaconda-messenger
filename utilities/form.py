@@ -1,4 +1,5 @@
 from django import forms
+
 class MeetingForm(forms.Form):
     date = forms.DateField()
     time = forms.TimeField()
