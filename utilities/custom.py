@@ -6,7 +6,7 @@ from .form import MeetingForm
 def resolveMeetingData(request):
     if(request.method == "POST"):
         #GIVE ME STH
-        data = MeetingForm(request.POST)
+        data = MeetingForm(json.loads(request.POST))
         models.db.child("meetings").push(data)
 
 def getUserChatmates():
