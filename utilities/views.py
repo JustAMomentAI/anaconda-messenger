@@ -11,9 +11,5 @@ def goToSetMeetingsAndIdeas(request):
     return render(request, "generate.html")
 def setMeeting(request):
     if(request.method == "POST"):
-        meetingForm = form.MeetingForm(request.POST);
-        if meetingForm.is_valid():
-            print (meetingForm.cleaned_data["date"])
-        else:
-            print("fuck");
+        print(request.POST)
     return render(request, "generate.html")
