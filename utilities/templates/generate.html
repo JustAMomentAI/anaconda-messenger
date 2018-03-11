@@ -156,10 +156,10 @@
     <h6>Set meetings</h6>
       <form action="/utilities/meetingset/" method="post">
       {% csrf_token %}
-      <p><label for="date">Day</label>{{form.date}}</p>
-      <p><label for="time">Time</label>{{form.time}}</p>
-      <p><label for="content">Content</label>{{form.content}}</p>
-      <p><label for="note">Note</label>{{form.note}}</p>
+      <p><label for="date">Day</label> {{form.date}} </p>
+      <p><label for="time">Time</label> {{form.time}} </p>
+      <p><label for="content">Content</label> {{form.content}} </p>
+      <p><label for="note">Note</label> {{form.note}} </p>
       <p>
         <button class="w3-button w3-light-grey w3-padding-large" type="submit" >
           <i class="fa fa-paper-plane"></i> SET :)

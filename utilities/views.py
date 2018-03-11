@@ -10,7 +10,8 @@ def homePage(request):
     return render(request, "home.html", usersList)
 #def updateMessages(request):
 def goToSetMeetingsAndIdeas(request):
-    return render(request, "generate.html")
+    
+    return render(request, "generate.html", {'form': MeetingForm()})
 def setMeeting(request):
     if(request.method == "POST"):
         print("first step")
