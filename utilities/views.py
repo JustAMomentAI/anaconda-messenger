@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . import custom
+import custom
 # Create your views here.
 def loginPage(request):
     return render(request, "index.html" )
