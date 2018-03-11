@@ -24,7 +24,8 @@ def setMeeting(request):
             }
             custom.resolveMeetingData(data)
         else:
-            return render(request, "generate.html", {'error' : 'wrong format. Please note the instructions'})
+
+            return render(request, "generate.html", {'error' : 'wrong format. Please note the instructions', 'form' : MeetingForm()})
     else:
         meetingForm = MeetingForm()
     return render(request, "generate.html", {'form' : meetingForm, "ideaForm" : IdeaForm()})
@@ -39,7 +40,7 @@ def setIdeas(request):
             }
             custom.resolveIdeaData(data)
         else:
-            return render(request, "generate.html", {'error' : 'wrong format. Please note the instructions'})
+            return render(request, "generate.html", {'error' : 'wrong format. Please note the instructions',  : })
     else:
         ideaForm = IdeaForm()
     return render(request, "generate.html", {'form' : MeetingForm(), "ideaForm" : ideaForm})

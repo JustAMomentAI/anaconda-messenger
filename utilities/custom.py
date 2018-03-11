@@ -2,11 +2,10 @@ import json
 from django.dispatch import receiver
 from allauth.account import signals
 from . import models
-from .form import MeetingForm
 def resolveMeetingData(data):
-        models.db.child("meetings").push(data)
+    models.db.child("meetings").push(data)
 def resolveIdeaData(data):
-        models.db.child("meetings").push(data)
+    models.db.child("ideas").push(data)
 def getUserChatmates():
     return models.db.child("users").get()        
 
