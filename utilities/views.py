@@ -11,5 +11,5 @@ def goToSetMeetingsAndIdeas(request):
     return render(request, "generate.html")
 def setMeeting(request):
     if(request.method == "POST"):
-        print(request.POST)
+        print(request.body)
     return render(request, "generate.html")
