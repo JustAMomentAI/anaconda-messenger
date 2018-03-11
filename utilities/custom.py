@@ -7,7 +7,7 @@ def resolveMeetingData(data):
 def resolveIdeaData(data):
     models.db.child("ideas").push(data)
 def getUserChatmates():
-    return models.db.child("users").get()        
+    return models.db.child("users").get().val()       
 
 @receiver (signals.user_logged_in)
 def savingUserData(sender, **kwargs):
